@@ -1,16 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Nav } from "@/components/lapidar/Nav";
+import { Hero } from "@/components/lapidar/Hero";
+import { Sobre } from "@/components/lapidar/Sobre";
+import { Eixos } from "@/components/lapidar/Eixos";
+import { Projetos } from "@/components/lapidar/Projetos";
+import { Publicacoes } from "@/components/lapidar/Publicacoes";
+import { Parcerias } from "@/components/lapidar/Parcerias";
+import { Footer } from "@/components/lapidar/Footer";
+import { useEffect } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "LAPIDAR — Laboratório de Pesquisa e Inovação Darcy Ribeiro · CEAD/UnB";
+    const desc = "Espaço de experimentação, reflexão e produção de conhecimento dedicado à transformação das práticas educativas por meio da pesquisa e do uso crítico de tecnologias digitais.";
+    let m = document.querySelector('meta[name="description"]');
+    if (!m) { m = document.createElement("meta"); m.setAttribute("name", "description"); document.head.appendChild(m); }
+    m.setAttribute("content", desc);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="min-h-screen bg-paper text-ink">
+      <Nav />
+      <Hero />
+      <Sobre />
+      <Eixos />
+      <Projetos />
+      <Publicacoes />
+      <Parcerias />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
