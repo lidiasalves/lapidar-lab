@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('./assets/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -10,87 +18,86 @@
 
 @layer base {
   :root {
-    /* Surfaces — papel off-white quente */
-    --background: 42 30% 96%;          /* #f5f3ee */
-    --foreground: 222 60% 8%;          /* tinta profunda */
+    /* Base institucional: #fbfbfb, #472563, #fab22d */
+    --background: 0 0% 98%;            /* #fbfbfb */
+    --foreground: 272 49% 21%;         /* #472563 */
 
-    --paper: 42 30% 96%;
-    --paper-soft: 38 25% 92%;          /* #e8e4dd */
-    --ink: 222 65% 8%;
-    --ink-soft: 222 30% 25%;
+    --paper: 0 0% 98%;
+    --paper-soft: 273 34% 95%;
+    --ink: 272 49% 21%;
+    --ink-soft: 272 28% 34%;
 
-    /* UnB navy + amber accent (homenagem ao amarelo atual) */
-    --unb: 222 62% 15%;                /* #0f1b3d */
-    --unb-foreground: 42 30% 96%;
-    --amber: 31 64% 49%;               /* #d4842a */
-    --amber-foreground: 222 65% 8%;
+    --unb: 272 49% 21%;
+    --unb-foreground: 0 0% 98%;
+    --amber: 39 95% 58%;               /* #fab22d */
+    --amber-foreground: 272 58% 16%;
 
-    --card: 42 30% 96%;
-    --card-foreground: 222 65% 8%;
+    --card: 0 0% 99%;
+    --card-foreground: 272 49% 21%;
 
-    --popover: 42 30% 96%;
-    --popover-foreground: 222 65% 8%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 272 49% 21%;
 
-    --primary: 222 62% 15%;
-    --primary-foreground: 42 30% 96%;
+    --primary: 272 49% 21%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 38 25% 92%;
-    --secondary-foreground: 222 65% 8%;
+    --secondary: 273 34% 94%;
+    --secondary-foreground: 272 49% 21%;
 
-    --muted: 38 22% 90%;
-    --muted-foreground: 222 20% 35%;
+    --muted: 274 24% 92%;
+    --muted-foreground: 272 22% 41%;
 
-    --accent: 31 64% 49%;
-    --accent-foreground: 222 65% 8%;
+    --accent: 39 95% 58%;
+    --accent-foreground: 272 58% 16%;
 
     --destructive: 0 70% 45%;
-    --destructive-foreground: 42 30% 96%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 38 18% 82%;
-    --input: 38 18% 82%;
-    --ring: 222 62% 15%;
+    --border: 273 23% 85%;
+    --input: 273 23% 85%;
+    --ring: 272 49% 21%;
 
-    --radius: 0.25rem;
+    --radius: 0.72rem;
 
     /* Gradients editoriais */
-    --gradient-paper: linear-gradient(180deg, hsl(42 30% 96%) 0%, hsl(38 25% 92%) 100%);
-    --gradient-ink: linear-gradient(135deg, hsl(222 62% 15%) 0%, hsl(222 70% 10%) 100%);
-    --gradient-amber: linear-gradient(135deg, hsl(31 64% 49%) 0%, hsl(25 70% 42%) 100%);
+    --gradient-paper: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(273 34% 95%) 100%);
+    --gradient-ink: linear-gradient(135deg, hsl(272 49% 21%) 0%, hsl(272 58% 16%) 100%);
+    --gradient-amber: linear-gradient(135deg, hsl(39 95% 58%) 0%, hsl(32 92% 51%) 100%);
 
     /* Sombras */
-    --shadow-soft: 0 1px 2px hsl(222 30% 10% / 0.04), 0 8px 24px hsl(222 30% 10% / 0.06);
-    --shadow-deep: 0 20px 60px -20px hsl(222 50% 10% / 0.25);
+    --shadow-soft: 0 1px 2px hsl(272 38% 14% / 0.04), 0 10px 24px hsl(272 38% 14% / 0.08);
+    --shadow-deep: 0 24px 60px -24px hsl(272 52% 18% / 0.32);
 
     /* Motion */
     --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .dark {
-    --background: 222 65% 6%;
-    --foreground: 42 30% 96%;
-    --paper: 222 65% 6%;
-    --paper-soft: 222 50% 10%;
-    --ink: 42 30% 96%;
-    --ink-soft: 42 20% 80%;
-    --unb: 42 30% 96%;
-    --unb-foreground: 222 65% 6%;
-    --amber: 31 80% 58%;
-    --amber-foreground: 222 65% 6%;
-    --card: 222 65% 6%;
-    --card-foreground: 42 30% 96%;
-    --popover: 222 65% 6%;
-    --popover-foreground: 42 30% 96%;
-    --primary: 42 30% 96%;
-    --primary-foreground: 222 65% 6%;
-    --secondary: 222 50% 12%;
-    --secondary-foreground: 42 30% 96%;
-    --muted: 222 40% 14%;
-    --muted-foreground: 42 15% 70%;
-    --accent: 31 80% 58%;
-    --accent-foreground: 222 65% 6%;
-    --border: 222 40% 18%;
-    --input: 222 40% 18%;
-    --ring: 42 30% 96%;
+    --background: 272 38% 11%;
+    --foreground: 0 0% 98%;
+    --paper: 272 38% 11%;
+    --paper-soft: 272 35% 16%;
+    --ink: 0 0% 98%;
+    --ink-soft: 274 16% 82%;
+    --unb: 0 0% 98%;
+    --unb-foreground: 272 38% 11%;
+    --amber: 39 95% 58%;
+    --amber-foreground: 272 58% 16%;
+    --card: 272 38% 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 272 38% 11%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 272 38% 11%;
+    --secondary: 272 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 272 27% 22%;
+    --muted-foreground: 274 20% 78%;
+    --accent: 39 95% 58%;
+    --accent-foreground: 272 58% 16%;
+    --border: 272 22% 26%;
+    --input: 272 22% 26%;
+    --ring: 0 0% 98%;
   }
 }
 
@@ -99,14 +106,15 @@
   html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Work Sans', system-ui, sans-serif;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
     font-feature-settings: 'ss01', 'cv11';
   }
   ::selection { background: hsl(var(--amber) / 0.4); color: hsl(var(--ink)); }
 }
 
 @layer utilities {
-  .font-display { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; }
+  .font-display { font-family: 'Sora', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.03em; }
+  .font-script { font-family: 'Dancing Script', 'Brush Script MT', cursive; font-weight: 700; letter-spacing: 0.01em; }
   .font-mono-edit { font-family: 'JetBrains Mono', monospace; }
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
@@ -141,6 +149,69 @@
   @keyframes shimmer {
     0%, 100% { opacity: 0.4; }
     50% { opacity: 1; }
+  }
+
+  .hero-title-line {
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .hero-title-letter {
+    opacity: 0;
+    transform: translateY(0.24em);
+    animation: heroLetterReveal 0.62s var(--ease-editorial) forwards;
+    animation-delay: calc(var(--line-delay, 0ms) + (var(--i, 0) * 42ms));
+    will-change: transform, opacity;
+  }
+
+  @keyframes heroLetterReveal {
+    from {
+      opacity: 0;
+      transform: translateY(0.24em);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .typewriter-line,
+  .typewriter-line-caret {
+    display: block;
+    width: max-content;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.08;
+    padding-right: 0.16em;
+    padding-bottom: 0.06em;
+    animation: typeLine var(--duration, 0.9s) steps(var(--chars), end) var(--delay, 0s) forwards;
+  }
+
+  .typewriter-line-caret {
+    border-right: 0.08em solid hsl(var(--amber));
+    animation:
+      typeLine var(--duration, 0.9s) steps(var(--chars), end) var(--delay, 0s) forwards,
+      caretBlink 1.2s steps(2, end) var(--delay, 0s) 3 forwards;
+  }
+
+  @keyframes typeLine {
+    from { max-width: 0; }
+    to { max-width: calc(var(--chars) * 1ch + 0.28em); }
+  }
+
+  @keyframes caretBlink {
+    0%, 49% { border-color: hsl(var(--amber)); }
+    50%, 100% { border-color: transparent; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .typewriter-line,
+    .typewriter-line-caret {
+      animation: none;
+      max-width: none;
+      border-right: 0;
+    }
   }
 
   .link-underline {

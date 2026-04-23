@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "LAPIDAR — Laboratório de Pesquisa e Inovação Darcy Ribeiro · CEAD/UnB";
+    document.title = "LAPIDAR - Laboratório de Pesquisa e Inovação Darcy Ribeiro · CEAD/UnB";
     const desc = "Espaço de experimentação, reflexão e produção de conhecimento dedicado à transformação das práticas educativas por meio da pesquisa e do uso crítico de tecnologias digitais.";
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement("meta"); m.setAttribute("name", "description"); document.head.appendChild(m); }

@@ -40,7 +40,7 @@ export const Eixos = () => {
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">§ 02 — Eixos de atuação</p>
             <h2 className="mt-4 max-w-2xl font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-              Cinco frentes, uma <span className="italic">missão</span>.
+              Cinco frentes, uma <span className="font-script text-amber">missão</span>.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-ink-soft">
@@ -53,7 +53,7 @@ export const Eixos = () => {
           {eixos.map((e) => (
             <article
               key={e.n}
-              className={`group relative flex flex-col justify-between overflow-hidden border border-border bg-paper p-7 transition-all duration-500 hover:border-ink ${e.span} ${
+              className={`group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-paper p-7 transition-all duration-500 hover:border-ink ${e.span} ${
                 e.accent ? "bg-ink text-paper hover:bg-ink" : ""
               }`}
             >
