@@ -113,11 +113,52 @@
 }
 
 @layer utilities {
+  @property --stat-value {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
+  }
+
   .font-display { font-family: 'Sora', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.03em; }
   .font-script { font-family: 'Dancing Script', 'Brush Script MT', cursive; font-weight: 700; letter-spacing: 0.01em; }
   .font-mono-edit { font-family: 'JetBrains Mono', monospace; }
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
+
+  .stat-counter {
+    counter-reset: stat var(--stat-value);
+    animation: statCount 1.4s var(--ease-editorial) var(--stat-delay, 0ms) forwards;
+    display: inline-flex;
+    align-items: baseline;
+    min-width: 2ch;
+  }
+
+  .stat-counter::before {
+    content: counter(stat, decimal-leading-zero);
+  }
+
+  .stat-counter::after {
+    content: attr(data-suffix);
+  }
+
+  @keyframes statCount {
+    from {
+      --stat-value: 0;
+    }
+    to {
+      --stat-value: var(--stat-target);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stat-counter {
+      animation: none;
+      --stat-value: var(--stat-target);
+    }
+    .stat-counter::before {
+      content: counter(stat, decimal-leading-zero);
+    }
+  }
 
   .bracket::before { content: '['; @apply text-amber mr-0.5; }
   .bracket::after { content: ']'; @apply text-amber ml-0.5; }

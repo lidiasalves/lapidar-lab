@@ -8,7 +8,7 @@ export const Parcerias = () => {
           <div className="lg:col-span-5">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">§ 05 — Parcerias</p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-              Construindo <span className="font-script text-amber">em rede</span>.
+              Construindo <br />[<span className="font-script text-amber">em rede</span>]
             </h2>
             <p className="mt-6 max-w-md text-ink-soft">
               Trabalhamos com instituições públicas, redes de ensino e organizações da sociedade

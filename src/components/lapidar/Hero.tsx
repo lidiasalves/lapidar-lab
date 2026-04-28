@@ -8,9 +8,15 @@ const titleLines = [
   { text: "Darcy Ribeiro", className: "" },
 ];
 
-const renderTitleLine = (text: string, className: string, lineIndex: number, prefixDelay: number) => (
+const renderTitleLine = (
+  text: string,
+  className: string,
+  lineIndex: number,
+  prefixDelay: number,
+  trailingContent?: React.ReactNode,
+) => (
   <span
-    className={`hero-title-line block overflow-visible py-[0.1em] leading-[1.18] ${className}`}
+    className={`hero-title-line block overflow-visible leading-[1.18] ${className}`}
     aria-hidden="true"
   >
     {Array.from(text).map((char, charIndex) => (
@@ -25,6 +31,7 @@ const renderTitleLine = (text: string, className: string, lineIndex: number, pre
         {char === " " ? "\u00A0" : char}
       </span>
     ))}
+    {trailingContent}
   </span>
 );
 
@@ -48,24 +55,16 @@ export const Hero = () => {
               {renderTitleLine(titleLines[0].text, titleLines[0].className, 0, 0)}
               {renderTitleLine(titleLines[1].text, titleLines[1].className, 1, 80)}
               {renderTitleLine(titleLines[2].text, titleLines[2].className, 2, 160)}
-              <span className="hero-title-line block overflow-visible leading-[1.08] md:py-[0.08em] md:leading-[1.14]" aria-hidden="true">
-                {Array.from(titleLines[3].text).map((char, charIndex) => (
-                  <span
-                    key={`darcy-${charIndex}`}
-                    className="hero-title-letter inline-block whitespace-pre"
-                    style={{
-                      "--i": charIndex,
-                      "--line-delay": "1620ms",
-                    } as React.CSSProperties}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
+              {renderTitleLine(
+                titleLines[3].text,
+                titleLines[3].className,
+                0,
+                1620,
                 <span
                   className="hero-title-letter ml-3 inline-block h-3 w-3 rounded-[0.25rem] bg-amber align-middle md:ml-6 md:h-4 md:w-4"
-                  style={{ "--i": 12, "--line-delay": "1620ms" } as React.CSSProperties}
-                />
-              </span>
+                  style={{ "--i": 12 } as React.CSSProperties}
+                />,
+              )}
             </h1>
 
             <div className="mt-8 max-w-xl">
