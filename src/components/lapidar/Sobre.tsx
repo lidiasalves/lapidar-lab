@@ -1,4 +1,10 @@
 export const Sobre = () => {
+  const stats = [
+    { value: 8, suffix: '+', label: 'Linhas de pesquisa' },
+    { value: 32, suffix: '+', label: 'Pesquisadores' },
+    { value: 10, suffix: '+', label: 'Iniciativas em curso' },
+  ];
+
   return (
     <section id="sobre" className="bg-paper py-24 md:py-32">
       <div className="container">
@@ -8,7 +14,7 @@ export const Sobre = () => {
               § 01 — Manifesto
             </p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-              Pesquisar é <em>lapidar</em> o futuro da educação.
+              Pesquisar e [<span className="font-script text-amber">lapidar</span>] o futuro da educação
             </h2>
             <div className="mt-8 inline-block border-t border-amber pt-4 font-mono text-xs uppercase tracking-widest text-ink">
               CEAD · Universidade de Brasília
@@ -32,14 +38,26 @@ export const Sobre = () => {
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
-              {[
-                { n: "08", l: "Linhas de pesquisa" },
-                { n: "32+", l: "Pesquisadores" },
-                { n: "—", l: "Iniciativas em curso" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <div className="font-display text-5xl text-ink">{s.n}</div>
-                  <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{s.l}</div>
+              {stats.map((s, index) => (
+                <div key={s.label}>
+                  <div
+                    className="stat-counter font-display text-5xl text-ink"
+                    data-suffix={s.suffix}
+                    aria-hidden="true"
+                    style={
+                      {
+                        '--stat-target': s.value,
+                        '--stat-delay': `${index * 180}ms`,
+                      } as React.CSSProperties
+                    }
+                  />
+                  <span className="sr-only">
+                    {s.value}
+                    {s.suffix} {s.label}
+                  </span>
+                  <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>

@@ -13,7 +13,7 @@ export const Publicacoes = () => {
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-amber">§ 04 — Publicações</p>
             <h2 className="mt-4 max-w-2xl font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-              Produção <span className="italic">acadêmica</span> recente.
+              Produção [<span className="font-script text-amber">acadêmica</span>] recente
             </h2>
           </div>
           <a href="#" className="link-underline font-mono text-xs uppercase tracking-widest text-paper">

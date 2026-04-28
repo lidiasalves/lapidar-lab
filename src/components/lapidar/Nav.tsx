@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logoLapidar from "@/assets/logo-lapidar.jpg";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -26,12 +27,12 @@ export const Nav = () => {
       }`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <a href="#top" className="group flex items-baseline gap-2">
-          <span className="font-display text-2xl leading-none">
-            <span className="text-amber">[</span>
-            <span className="tracking-tight">LAPIDAR</span>
-            <span className="text-amber">]</span>
-          </span>
+        <a href="#top" className="group flex items-center gap-3">
+          <img
+            src={logoLapidar}
+            alt="Logo do Laboratório LAPIDAR"
+            className="h-9 w-auto rounded-md md:h-10"
+          />
           <span className="hidden text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground sm:inline">
             CEAD · UnB
           </span>
@@ -51,14 +52,14 @@ export const Nav = () => {
 
         <a
           href="#regulamento"
-          className="hidden rounded-full border border-ink px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-ink transition-all hover:bg-ink hover:text-paper md:inline-block"
+          className="hidden rounded-lg border border-ink px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-ink transition-all hover:bg-ink hover:text-paper md:inline-block"
         >
           Regulamento
         </a>
 
         <button
           aria-label="Menu"
-          className="md:hidden flex h-9 w-9 items-center justify-center rounded-full border border-ink/30"
+          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg border border-ink/30"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="relative block h-2.5 w-4">
@@ -76,7 +77,7 @@ export const Nav = () => {
                 {l.label}
               </a>
             ))}
-            <a href="#regulamento" onClick={() => setOpen(false)} className="mt-3 inline-block self-start rounded-full border border-ink px-4 py-1.5 text-xs uppercase tracking-wider">
+            <a href="#regulamento" onClick={() => setOpen(false)} className="mt-3 inline-block self-start rounded-lg border border-ink px-4 py-1.5 text-xs uppercase tracking-wider">
               Regulamento
             </a>
           </nav>

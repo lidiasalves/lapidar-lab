@@ -1,6 +1,39 @@
-import darcy from "@/assets/darcy-ribeiro.jpg";
+import darcy from "@/assets/darcy-ribeiro-lapidar.jpg";
 
 const rotating = ["pesquisa", "inovação", "experimentação", "reflexão", "crítica"];
+const titleLines = [
+  { text: "Laboratório", className: "" },
+  { text: "de Pesquisa", className: "" },
+  { text: "e Inovação", className: "font-script text-[0.9em] text-ink-soft" },
+  { text: "Darcy Ribeiro", className: "" },
+];
+
+const renderTitleLine = (
+  text: string,
+  className: string,
+  lineIndex: number,
+  prefixDelay: number,
+  trailingContent?: React.ReactNode,
+) => (
+  <span
+    className={`hero-title-line block overflow-visible leading-[1.18] ${className}`}
+    aria-hidden="true"
+  >
+    {Array.from(text).map((char, charIndex) => (
+      <span
+        key={`${text}-${charIndex}`}
+        className="hero-title-letter inline-block whitespace-pre"
+        style={{
+          "--i": charIndex,
+          "--line-delay": `${prefixDelay + lineIndex * 460}ms`,
+        } as React.CSSProperties}
+      >
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ))}
+    {trailingContent}
+  </span>
+);
 
 export const Hero = () => {
   return (
@@ -18,18 +51,20 @@ export const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Headline */}
           <div className="lg:col-span-8">
-            <h1 className="font-display text-[clamp(3rem,9vw,8.5rem)] leading-[0.92] tracking-tight text-balance reveal-up">
-              Laboratório
-              <br />
-              de Pesquisa
-              <br />
-              <span className="italic text-ink-soft">e Inovação</span>
-              <br />
-              <span className="relative inline-block">
-                Darcy Ribeiro
-                <span className="absolute -right-3 top-2 h-3 w-3 rounded-full bg-amber md:-right-6 md:top-4" />
-              </span>
-              <span className="text-amber">.</span>
+            <h1 className="flex flex-col overflow-visible py-1 font-display text-[clamp(2.4rem,7.6vw,7.2rem)] leading-[1.08] tracking-tight md:py-2 md:leading-[1.14]" aria-label="Laboratório de Pesquisa e Inovação Darcy Ribeiro">
+              {renderTitleLine(titleLines[0].text, titleLines[0].className, 0, 0)}
+              {renderTitleLine(titleLines[1].text, titleLines[1].className, 1, 80)}
+              {renderTitleLine(titleLines[2].text, titleLines[2].className, 2, 160)}
+              {renderTitleLine(
+                titleLines[3].text,
+                titleLines[3].className,
+                0,
+                1620,
+                <span
+                  className="hero-title-letter ml-3 inline-block h-3 w-3 rounded-[0.25rem] bg-amber align-middle md:ml-6 md:h-4 md:w-4"
+                  style={{ "--i": 12 } as React.CSSProperties}
+                />,
+              )}
             </h1>
 
             <div className="mt-8 max-w-xl">
@@ -43,7 +78,7 @@ export const Hero = () => {
             <div className="mt-10 flex flex-wrap items-center gap-4 reveal-up">
               <a
                 href="#sobre"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-3 rounded-lg bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
               >
                 Conheça o laboratório
                 <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -67,13 +102,13 @@ export const Hero = () => {
           {/* Portrait */}
           <div className="lg:col-span-4 reveal-up">
             <figure className="relative">
-              <div className="absolute -inset-3 -z-10 bg-amber/20" aria-hidden />
+              <div className="absolute -inset-3 -z-10 rounded-xl bg-[#FDB93C]" aria-hidden />
               <img
                 src={darcy}
-                alt="Retrato editorial em preto e branco de Darcy Ribeiro"
+                alt="Retrato editorial de Darcy Ribeiro"
                 width={1024}
                 height={1280}
-                className="aspect-[4/5] w-full object-cover grayscale shadow-deep"
+                className="aspect-[4/5] w-full rounded-xl object-cover"
               />
               <figcaption className="mt-3 flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                 <span>Darcy Ribeiro<br/>1922 — 1997</span>
@@ -89,11 +124,16 @@ export const Hero = () => {
         <div className="flex w-max marquee">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex shrink-0 items-center gap-12 pr-12 font-display text-3xl italic text-ink-soft md:text-5xl">
-              <span>educação pública</span><span className="text-amber">✺</span>
-              <span>pensamento crítico</span><span className="text-amber">✺</span>
-              <span>tecnologias digitais</span><span className="text-amber">✺</span>
-              <span>formação docente</span><span className="text-amber">✺</span>
-              <span>metodologias ativas</span><span className="text-amber">✺</span>
+              <span>educação pública</span>
+              <img src="/favicon.png" alt="" aria-hidden="true" className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5" />
+              <span>pensamento crítico</span>
+              <img src="/favicon.png" alt="" aria-hidden="true" className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5" />
+              <span>tecnologias digitais</span>
+              <img src="/favicon.png" alt="" aria-hidden="true" className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5" />
+              <span>formação docente</span>
+              <img src="/favicon.png" alt="" aria-hidden="true" className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5" />
+              <span>metodologias ativas</span>
+              <img src="/favicon.png" alt="" aria-hidden="true" className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5" />
             </div>
           ))}
         </div>
