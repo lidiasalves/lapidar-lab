@@ -39,7 +39,7 @@ export const Eixos = () => {
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">§ 02 — Eixos de atuação</p>
             <h2 className="mt-4 max-w-2xl font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-              Cinco frentes, uma [<span className="font-script text-amber">missão</span>]
+              Cinco frentes, uma <br />[ <span className="font-script text-amber">missão</span> ]
             </h2>
           </div>
           <p className="max-w-sm text-md text-ink-soft">

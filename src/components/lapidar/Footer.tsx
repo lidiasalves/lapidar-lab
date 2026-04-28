@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h3 className="font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-7xl">
-              Conheça melhor o [<span className="font-script text-amber">laboratório</span>]
+              Conheça melhor o [ <span className="font-script text-amber">laboratório</span> ]
             </h3>
             <p className="mt-6 max-w-md text-ink-soft">
               Acesse o regulamento do LAPIDAR para entender governança, eixos e formas de

@@ -14,7 +14,7 @@ export const Sobre = () => {
               § 01 — Manifesto
             </p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-              Pesquisar e [<span className="font-script text-amber">lapidar</span>] o futuro da educação
+              Pesquisar e <br />[ <span className="font-script text-amber">lapidar</span> ] o futuro da educação
             </h2>
             <div className="mt-8 inline-block border-t border-amber pt-4 font-mono text-xs uppercase tracking-widest text-ink">
               CEAD · Universidade de Brasília

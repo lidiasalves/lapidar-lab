@@ -31,8 +31,8 @@ export const Projetos = () => {
       <div className="container">
         <div className="mb-14">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">§ 03 — Projetos & iniciativas</p>
-          <h2 className="mt-4 max-w-3xl font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
-            O que estamos [<span className="font-script text-amber">construindo</span>] agora
+          <h2 className="mt-4 max-w-4xl font-display text-5xl leading-[0.95] tracking-tight md:text-6xl">
+            O que estamos [ <span className="font-script text-amber">construindo</span> ]<br/> agora
           </h2>
         </div>
 
