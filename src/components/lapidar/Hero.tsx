@@ -1,4 +1,4 @@
-import darcy from "@/assets/darcy-ribeiro-lapidar.jpg";
+import darcy from "@/assets/banner/darcy-ribeiro-lapidar.jpg";
 
 const rotating = ["pesquisa", "inovação", "experimentação", "reflexão", "crítica"];
 const titleLines = [

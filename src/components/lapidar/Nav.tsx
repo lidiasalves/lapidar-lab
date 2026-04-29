@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoLapidar from "@/assets/logo-lapidar.jpg";
+import logoLapidar from "@/assets/logos/logo-lapidar.png";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -52,7 +52,7 @@ export const Nav = () => {
 
         <a
           href="#regulamento"
-          className="hidden rounded-lg border border-ink px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-ink transition-all hover:bg-ink hover:text-paper md:inline-block"
+          className="hidden bg-amber rounded-lg px-4 py-1.5 text-xs font-medium uppercase tracking-wider transition-all hover:bg-ink hover:text-paper md:inline-block"
         >
           Regulamento
         </a>
