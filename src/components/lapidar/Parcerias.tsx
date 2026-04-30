@@ -10,10 +10,9 @@ import logoUab from "@/assets/logos/logo-uab.png";
 
 const parceiros = [
   { name: "UnB", src: logoUnb },
-  { name: "CEAD", src: logoCead, className: "<max-h-50></max-h-50> max-w-[10.5rem]" },
-  { name: "CAPES", src: logoCapes },
+  { name: "CEAD", src: logoCead },
   { name: "MEC", src: logoMec },
-  { name: "UAB", src: logoUab, className: "max-h-28 max-w-[10.5rem]" },
+  { name: "UAB", src: logoUab},
 ];
 
 export const Parcerias = () => {
