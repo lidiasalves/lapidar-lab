@@ -5,6 +5,7 @@ import { Eixos } from "@/components/lapidar/Eixos";
 import { Projetos } from "@/components/lapidar/Projetos";
 import { Publicacoes } from "@/components/lapidar/Publicacoes";
 import { Parcerias } from "@/components/lapidar/Parcerias";
+import { ComoChegar } from "@/components/lapidar/ComoChegar";
 import { Footer } from "@/components/lapidar/Footer";
 import { useEffect } from "react";
 
@@ -26,6 +27,7 @@ const Index = () => {
       <Projetos />
       <Publicacoes />
       <Parcerias />
+      <ComoChegar />
       <Footer />
     </main>
   );

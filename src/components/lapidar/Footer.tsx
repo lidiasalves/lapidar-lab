@@ -1,4 +1,5 @@
-import logoLapidar from "@/assets/logo-lapidar.jpg";
+import logoLapidar from "@/assets/logos/logo-lapidar.png";
+import { Instagram, Youtube } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -7,7 +8,7 @@ export const Footer = () => {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h3 className="font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-7xl">
-              Conheça melhor o [ <span className="font-script text-amber">laboratório</span> ]
+              Conheça melhor o <span className="whitespace-nowrap">[ <span className="font-script text-amber">laboratório</span> ]</span>
             </h3>
             <p className="mt-6 max-w-md text-ink-soft">
               Acesse o regulamento do LAPIDAR para entender governança, eixos e formas de
@@ -49,7 +50,7 @@ export const Footer = () => {
             <div>
               <h4 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Contato</h4>
               <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-                <li>lapidar@unb.br</li>
+                <li>lapidar.cead@unb.br</li>
                 <li>Campus Darcy Ribeiro<br/>Brasília · DF</li>
               </ul>
             </div>
@@ -62,9 +63,28 @@ export const Footer = () => {
             alt="Logo do Laboratório LAPIDAR"
             className="h-auto w-[min(92vw,680px)] rounded-lg"
           />
-          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-            © {new Date().getFullYear()} · Laboratório de Pesquisa e Inovação Darcy Ribeiro
-          </p>
+          <div className="flex flex-col items-start gap-4">
+            {/* Substituir os hrefs pelos caminhos reais das redes sociais quando estiverem definidos. */}
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="#"
+                aria-label="YouTube"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+              >
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              © {new Date().getFullYear()} · Laboratório de Pesquisa e Inovação Darcy Ribeiro
+            </p>
+          </div>
         </div>
       </div>
     </footer>
