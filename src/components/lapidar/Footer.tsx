@@ -1,5 +1,5 @@
 import logoLapidar from "@/assets/logos/logo-lapidar.png";
-import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h3 className="font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-7xl">
-              Conheça melhor o [ <span className="font-script text-amber">laboratório</span> ]
+              Conheça melhor o <span className="whitespace-nowrap">[ <span className="font-script text-amber">laboratório</span> ]</span>
             </h3>
             <p className="mt-6 max-w-md text-ink-soft">
               Acesse o regulamento do LAPIDAR para entender governança, eixos e formas de
@@ -50,7 +50,7 @@ export const Footer = () => {
             <div>
               <h4 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Contato</h4>
               <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-                <li>lapidar@unb.br</li>
+                <li>lapidar.cead@unb.br</li>
                 <li>Campus Darcy Ribeiro<br/>Brasília · DF</li>
               </ul>
             </div>
@@ -72,13 +72,6 @@ export const Footer = () => {
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
               >
                 <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
-              >
-                <Linkedin className="h-4 w-4" />
               </a>
               <a
                 href="#"
