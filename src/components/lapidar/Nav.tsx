@@ -7,6 +7,7 @@ const links = [
   { href: "#projetos", label: "Projetos" },
   { href: "#publicacoes", label: "Publicações" },
   { href: "#parcerias", label: "Parcerias" },
+  { href: "#como-chegar", label: "Como chegar" },
 ];
 
 export const Nav = () => {
@@ -38,7 +39,7 @@ export const Nav = () => {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -52,14 +53,14 @@ export const Nav = () => {
 
         <a
           href="#regulamento"
-          className="hidden bg-amber rounded-lg px-4 py-1.5 text-xs font-medium uppercase tracking-wider transition-all hover:bg-ink hover:text-paper md:inline-block"
+          className="hidden bg-amber rounded-lg px-4 py-1.5 text-xs font-medium uppercase tracking-wider transition-all hover:bg-ink hover:text-paper lg:inline-block"
         >
           Regulamento
         </a>
 
         <button
           aria-label="Menu"
-          className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg border border-ink/30"
+          className="flex h-9 w-9 items-center justify-center rounded-lg border border-ink/30 lg:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="relative block h-2.5 w-4">
@@ -70,7 +71,7 @@ export const Nav = () => {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-paper">
+        <div className="border-t border-border bg-paper lg:hidden">
           <nav className="container flex flex-col py-4">
             {links.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 font-display text-2xl text-ink">
