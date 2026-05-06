@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logoLapidar from "@/assets/logos/logo-lapidar.png";
 
 const links = [
@@ -51,12 +52,20 @@ export const Nav = () => {
           ))}
         </nav>
 
-        <a
-          href="#regulamento"
-          className="hidden bg-amber rounded-lg px-4 py-1.5 text-xs font-medium uppercase tracking-wider transition-all hover:bg-ink hover:text-paper lg:inline-block"
-        >
-          Regulamento
-        </a>
+        <div className="hidden items-center gap-2 lg:flex">
+          <Link
+            to="/tour-360"
+            className="bg-amber rounded-lg border border-ink px-4 py-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:bg-ink hover:text-paper"
+          >
+            Tour 360°
+          </Link>
+          <Link
+            to="/regulamento"
+            className="bg-amber rounded-lg border border-ink px-4 py-1.5 text-xs font-medium uppercase tracking-wider transition-all hover:bg-ink hover:text-paper"
+          >
+            Regulamento
+          </Link>
+        </div>
 
         <button
           aria-label="Menu"
@@ -78,9 +87,12 @@ export const Nav = () => {
                 {l.label}
               </a>
             ))}
-            <a href="#regulamento" onClick={() => setOpen(false)} className="mt-3 inline-block self-start rounded-lg border border-ink px-4 py-1.5 text-xs uppercase tracking-wider">
+            <Link to="/regulamento" onClick={() => setOpen(false)} className="mt-3 inline-block self-start rounded-lg border border-ink bg-amber px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper">
               Regulamento
-            </a>
+            </Link>
+            <Link to="/tour-360" onClick={() => setOpen(false)} className="mt-2 inline-block self-start rounded-lg border border-ink bg-amber px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper">
+              Tour 360°
+            </Link>
           </nav>
         </div>
       )}

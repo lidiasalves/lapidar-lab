@@ -1,9 +1,10 @@
 import logoLapidar from "@/assets/logos/logo-lapidar.png";
 import { Instagram, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer id="regulamento" className="bg-paper border-t border-ink/15">
+    <footer className="bg-paper border-t border-ink/15">
       <div className="container py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
@@ -15,12 +16,12 @@ export const Footer = () => {
               participação.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#"
+              <Link
+                to="/regulamento"
                 className="inline-flex items-center gap-3 rounded-lg bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform hover:-translate-y-0.5"
               >
-                Baixar regulamento ↓
-              </a>
+                Ler o regulamento ↓
+              </Link>
               <a
                 href="mailto:lapidar@unb.br"
                 className="inline-flex items-center gap-3 rounded-lg border border-ink px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
@@ -34,7 +35,7 @@ export const Footer = () => {
             <div>
               <h4 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Navegar</h4>
               <ul className="mt-4 space-y-2 text-sm">
-                {["Sobre","Eixos","Projetos","Publicações","Parcerias"].map(l => (
+                {["Sobre","Eixos","Projetos","Publicações","Parcerias", "Como chegar"].map(l => (
                   <li key={l}><a href={`#${l.toLowerCase()}`} className="link-underline text-ink">{l}</a></li>
                 ))}
               </ul>
@@ -61,7 +62,7 @@ export const Footer = () => {
           <img
             src={logoLapidar}
             alt="Logo do Laboratório LAPIDAR"
-            className="h-auto w-[min(92vw,680px)] rounded-lg"
+            className="h-100 w-[min(92vw,680px)] rounded-lg"
           />
           <div className="flex flex-col items-start gap-4">
             {/* Substituir os hrefs pelos caminhos reais das redes sociais quando estiverem definidos. */}
