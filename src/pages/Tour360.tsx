@@ -32,7 +32,7 @@ const Tour360 = () => {
           Tour 360° do LAPIDAR
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-ink-soft">
-          Area preparada para incorporar o tour virtual do laboratorio. Voce pode conectar aqui um
+          Area preparada para incorporar o tour virtual do laboratorio. Conectar aqui um
           iframe de plataforma 360° (Matterport, Kuula, Google Street View ou equivalente).
         </p>
 
@@ -41,7 +41,7 @@ const Tour360 = () => {
             <div>
               <h2 className="font-display text-3xl tracking-tight text-ink">Espaco reservado para o viewer 360°</h2>
               <p className="mt-3 text-ink-soft">
-                Quando o link do tour estiver pronto, eu posso inserir o embed responsivo com controles
+                Inserir o embed responsivo com controles
                 de navegacao, acessibilidade e fallback para dispositivos moveis.
               </p>
             </div>
@@ -53,6 +53,14 @@ const Tour360 = () => {
             </div>
           </div>
         </div>
+          <div className="mt-10">
+            <Link
+            to="/not-found"
+            className="rounded-lg bg-amber border border-ink px-4 py-2 text-xs font-medium uppercase tracking-wider text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+            Agende uma visita →
+          </Link>
+          </div>
       </section>
     </main>
   );
