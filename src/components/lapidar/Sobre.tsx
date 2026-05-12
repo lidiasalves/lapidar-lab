@@ -1,7 +1,7 @@
 export const Sobre = () => {
   const stats = [
-    { value: 8, suffix: '+', label: 'Linhas de pesquisa' },
-    { value: 32, suffix: '+', label: 'Pesquisadores' },
+    { value: 4, suffix: '+', label: 'Linhas de pesquisa' },
+    { value: 13, suffix: '+', label: 'Pesquisadores' },
     { value: 10, suffix: '+', label: 'Iniciativas em curso' },
   ];
 
