@@ -7,12 +7,15 @@ import logoCead from "@/assets/logos/logo-cead.png";
 import logoMec from "@/assets/logos/logo-mec-br.png";
 import logoUnb from "@/assets/logos/logo-unb.png";
 import logoUab from "@/assets/logos/logo-uab.png";
+import logoFinatec from "@/assets/logos/logo-finatec.png";
 
 const parceiros = [
   { name: "UnB", src: logoUnb },
   { name: "CEAD", src: logoCead },
   { name: "MEC", src: logoMec },
   { name: "UAB", src: logoUab},
+  { name: "CAPES", src: logoCapes},
+  { name: "Finatec", src: logoFinatec}
 ];
 
 export const Parcerias = () => {
@@ -105,18 +108,28 @@ export const Parcerias = () => {
 
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-              {parceiros.map((parceiro) => (
-                <div
-                  key={parceiro.name}
-                  className="group relative isolate flex aspect-square items-center justify-center p-6 transition-transform duration-300 hover:-translate-y-1"
-                >
-                  <img
-                    src={parceiro.src}
-                    alt={parceiro.name}
-                    className={`relative z-0 w-full object-contain grayscale contrast-125 brightness-75 drop-shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-[filter,transform] duration-300 group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 ${parceiro.className}`}
-                  />
-                </div>
-              ))}
+              {parceiros.map((parceiro, index) => {
+                let positionClass = "";
+
+                if (index === 4) {
+                  positionClass = "sm:col-start-2";
+                } else if (index === 5) {
+                  positionClass = "sm:col-start-3";
+                }
+
+                return (
+                  <div
+                    key={parceiro.name}
+                    className={`group relative isolate flex aspect-square items-center justify-center p-6 transition-transform duration-300 hover:-translate-y-1 ${positionClass}`}
+                  >
+                    <img
+                      src={parceiro.src}
+                      alt={parceiro.name}
+                      className="relative z-0 w-full object-contain grayscale contrast-125 brightness-75 drop-shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-[filter,transform] duration-300 group-hover:scale-[1.04] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
