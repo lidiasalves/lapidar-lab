@@ -1,6 +1,7 @@
 import { Nav } from "@/components/lapidar/Nav";
 import { Hero } from "@/components/lapidar/Hero";
 import { Sobre } from "@/components/lapidar/Sobre";
+import { VideoLapidar } from "@/components/lapidar/VideoLapidar";
 import { Eixos } from "@/components/lapidar/Eixos";
 import { Projetos } from "@/components/lapidar/Projetos";
 import { Publicacoes } from "@/components/lapidar/Publicacoes";
@@ -23,6 +24,12 @@ const Index = () => {
       <Nav />
       <Hero />
       <Sobre />
+      <div aria-hidden="true" className="bg-paper py-3 md:py-4">
+        <div className="container">
+          <div className="mx-auto h-px w-full max-w-3xl bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
+        </div>
+      </div>
+      <VideoLapidar />
       <Eixos />
       <Projetos />
       <Publicacoes />

@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-paper border-t border-ink/15">
+    <footer className="bg-paper">
       <div className="container py-20">
+        <div aria-hidden="true" className="mb-16">
+          <div className="mx-auto h-px w-full max-w-3xl bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
+        </div>
+
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h3 className="font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-7xl">
@@ -58,7 +62,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-end justify-between gap-6 border-t border-ink/15 pt-8">
+        <div className="mt-16">
+          <div aria-hidden="true" className="mb-8">
+            <div className="mx-auto h-px w-full bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
+          </div>
+
+          <div className="flex flex-wrap items-end justify-between gap-6 pt-8">
           <img
             src={logoLapidar}
             alt="Logo do Laboratório LAPIDAR"
@@ -85,6 +94,7 @@ export const Footer = () => {
             <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
               © {new Date().getFullYear()} · Laboratório de Pesquisa e Inovação Darcy Ribeiro
             </p>
+          </div>
           </div>
         </div>
       </div>
